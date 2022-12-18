@@ -1,10 +1,8 @@
-window.onload = begin 
-
-body = document.body
-loaded = document.getElementsByClassName
-function begin(){
-    setTimeout(function(){
-        body.addClass('loaded');
-        h1.css('color','#222222');
-    }, 3000);
-}
+function addBodyClass() {
+    let body = document.querySelector("body");
+  
+    // Add the "loaded" class to the body element
+    body.classList.add("loaded");
+  }
+  
+  setTimeout(addBodyClass, 3000);
