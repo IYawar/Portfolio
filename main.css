@@ -204,12 +204,15 @@ h1 {
     }
     h1{
         font-size: 3rem;
-        text-align: right;
     }
     #h1s{
-        padding-top: 38vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     #main-title-1{
+        margin-top: 0;
         margin-bottom: 0;
     }
     #main-title-2{
@@ -218,9 +221,14 @@ h1 {
     #navbar{
         float: left;
         display: flex;
-        position: fixed;
-        top: 50px;
+        position: relative;
+        top: 100vh;
         flex-direction: column;
+    }
+
+    .sticky{
+        position: fixed !important;
+        top: 15px !important;
     }
     #navbar a{
         font-size: 1.7rem;
@@ -229,5 +237,12 @@ h1 {
         border-bottom: solid 2px white ;
     }
     #top{
+        display: flex;
         height: 100vh;
+        justify-content: center;
+        flex-direction: column;
+    }
+    #pp{
+        width: 20vw ;
+        padding-bottom: 10vh;
     }
