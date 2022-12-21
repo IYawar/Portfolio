@@ -46,6 +46,9 @@
 	-webkit-animation: text-blur-out 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 	        animation: text-blur-out 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
+html {
+    scroll-behavior: smooth;
+  }
 *{
     color: white;
     font-family: 'Raleway', sans-serif;
@@ -205,11 +208,44 @@ h1 {
     h1{
         font-size: 3rem;
     }
+    h3{
+        text-decoration: underline;
+        font-style: italic;
+        font-size: 1.4em;
+    }
+    p{
+        font-size: 1em;
+        font-weight: bold;
+        padding-bottom: 25px;
+    }
     #h1s{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    #about{
+        margin-top: 0;
+    }
+    #about, #projects, #contact{
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    #project-div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .project-grid{
+        display: grid;
+        text-align: center;
+        padding: 10px;
+        border: 10px solid rgb(255, 255, 255);
+        border-radius: 1vw;
+        background-color: black;
+    }
+    .project-img{
+        width: 30vw;
     }
     #main-title-1{
         margin-top: 0;
