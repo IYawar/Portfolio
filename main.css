@@ -187,7 +187,12 @@ h1 {
         -webkit-transition: all 0.3s 1s ease-out;  
                 transition: all 0.3s 1s ease-out;
     }
-    
+    .loaded{
+        margin: 0;
+    }
+    #main{
+        width: 80vw;
+    }
     /* JavaScript Turned Off */
     .no-js #loader-wrapper {
         display: none;
@@ -196,14 +201,21 @@ h1 {
         color: rgb(136, 32, 32);
     }
     body{
-        background-color: #1c262c;
+        background-color: #222121;
     }
-    #content {
+    .content{
         margin: 0 auto;
-        padding-bottom: 50px;
         width: 80%;
         max-width: 1100px;
-
+    }
+    .section{
+        width: 100%;
+    }
+    .one{
+        background-color: rgb(20, 17, 17);
+    }
+    .two{
+        background-color: black;
     }
     h1{
         font-size: 3rem;
@@ -224,12 +236,19 @@ h1 {
         justify-content: center;
         align-items: center;
     }
-    #about{
+
+    #about h1{
         margin-top: 0;
+    }
+    #about h1, #projects h1, #contact h1{
+        text-align: center;
+        padding-bottom: 30px;
+        margin-top: 0;
+        padding-top: 10px;
     }
     #about, #projects, #contact{
         text-align: center;
-        padding-bottom: 30px;
+        height: 100vh
     }
     #project-div{
         display: flex;
@@ -260,6 +279,7 @@ h1 {
         position: relative;
         top: 100vh;
         flex-direction: column;
+        padding-top: 10px;
     }
 
     .sticky{
@@ -277,8 +297,43 @@ h1 {
         height: 100vh;
         justify-content: center;
         flex-direction: column;
+        margin-top: 0;
     }
     #pp{
         width: 20vw ;
         padding-bottom: 10vh;
+    }
+    #name, #email{
+        width: 30vw;
+        height: 4vh;
+        border-radius: 1vh;
+    }
+    #comment{
+        width: 30vw;
+        height: 30vh;
+        padding-top: 5px;
+        border-radius: 1vh;
+    }
+    #comment, #name, #email{
+        background-color: rgb(20, 17, 17);
+        border: solid white 1px;
+        margin-bottom: 10px;
+    }
+    #submit{
+        width: 200px;
+        height: 50px;
+        border-radius: 1vh;
+        background-color: rgb(20, 17, 17);
+    }
+    #submit:hover{
+        cursor: pointer;
+        filter: brightness(1.5);
+        transform: scale(1.1);
+        transition: ease-in-out 0.3s;
+    }
+    #footer{
+        bottom: 0;
+        background-color: red;
+        height: 20vh;
+        width: 100%;
     }
