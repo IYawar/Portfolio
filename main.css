@@ -314,10 +314,10 @@ h1 {
         border: 10px solid rgb(255, 255, 255);
         border-radius: 1vw;
         background-color: black;
-        transition: ease-in-out ;
+        transition: ease-in 0.3s;
     }
     .project-grid:hover{
-        transform: scale(1.15);
+        transform: scale(1.1);
     }
     .project-img{
         width: 30vw;
