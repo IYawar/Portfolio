@@ -1,3 +1,4 @@
+
 function addBodyClass() {
     let body = document.querySelector("body");
     
@@ -16,6 +17,29 @@ function addBodyClass() {
   setTimeout(addWelcome, 1800);
   setTimeout(addBodyClass, 3000);
 
+function whenInViewport(elementId, className) {
+  // Select the element with the specified identifier
+  const element = document.querySelector(elementId);
+  console.log(element)
+  // Get the current scroll position and the size of the viewport
+  const scroll = window.scrollY || window.pageYOffset;
+  const boundsTop = scroll + window.innerHeight - 150;
+
+  // Get the position and size of the element
+  const bounds = element.getBoundingClientRect();
+  const top = bounds.top + scroll;
+
+  // Check if the element is within the viewport
+  if (top < boundsTop) {
+    element.classList.add(className);
+  }
+}
+window.addEventListener('scroll', function() {
+  whenInViewport('#about', 'slide-right');
+  whenInViewport('#projects', 'slide-right');
+  whenInViewport('#contact', 'slide-right');
+});
+ 
 window.onscroll = function() {myFunction()};
 let navbar = document.getElementById("navbar");
 let sticky = navbar.offsetTop;
