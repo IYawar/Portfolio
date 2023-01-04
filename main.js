@@ -18,18 +18,12 @@ function addBodyClass() {
   setTimeout(addBodyClass, 3000);
 
 function whenInViewport(elementId, className) {
-  // Select the element with the specified identifier
   const element = document.querySelector(elementId);
-  console.log(element)
-  // Get the current scroll position and the size of the viewport
   const scroll = window.scrollY || window.pageYOffset;
   const boundsTop = scroll + window.innerHeight - 150;
-
-  // Get the position and size of the element
   const bounds = element.getBoundingClientRect();
   const top = bounds.top + scroll;
-
-  // Check if the element is within the viewport
+  
   if (top < boundsTop) {
     element.classList.add(className);
   }
@@ -40,15 +34,26 @@ window.addEventListener('scroll', function() {
   whenInViewport('#contact', 'slide-right');
 });
  
-window.onscroll = function() {myFunction()};
-let navbar = document.getElementById("navbar");
-let sticky = navbar.offsetTop;
+function handleScroll() {
+  let navbar = document.getElementById("navbar");
+  let sticky = navbar.offsetTop;
 
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
+  if (window.scrollY + window.innerHeight >= window.innerHeight * 2) navbar.classList.add("sticky");
+  else navbar.classList.remove("sticky");
 }
+
+window.addEventListener("scroll", handleScroll);
+const mediaQuery = window.matchMedia("(max-width: 500px)");
+
+function handleMediaQueryChange(mediaQuery) {
+  const element = document.getElementById("navbar");
+  if (mediaQuery.matches) element.style.display = "none";
+  else element.style.display = "flex"
+  
+}
+
+mediaQuery.addListener(handleMediaQueryChange);
+
+// You may also want to run the function initially to handle the case where
+// the page is loaded with a width less than 500px.
+handleMediaQueryChange(mediaQuery);
