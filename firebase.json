@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "herer",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
