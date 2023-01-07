@@ -1,17 +1,11 @@
 
 function addBodyClass() {
     let body = document.querySelector("body");
-    
-  
-    // Add the "loaded" class to the body element
     body.classList.add("loaded");
   }
   
   function addWelcome() {
     let welcome = document.getElementById("welcome")
-    
-  
-    // Add the "loaded" class to the body element
     welcome.classList.add("text-blur-out");
   }
   setTimeout(addWelcome, 1800);
@@ -54,6 +48,4 @@ function handleMediaQueryChange(mediaQuery) {
 
 mediaQuery.addListener(handleMediaQueryChange);
 
-// You may also want to run the function initially to handle the case where
-// the page is loaded with a width less than 500px.
 handleMediaQueryChange(mediaQuery);
