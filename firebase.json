@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "herer",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
