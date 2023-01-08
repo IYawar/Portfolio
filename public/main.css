@@ -93,6 +93,13 @@
         opacity: 1;
     }
 }
+::-webkit-scrollbar {
+    background: transparent;  
+}
+::-webkit-scrollbar-thumb {
+    background: #3f3737;
+    border-radius: 1vw;
+}
 
 .slide-right {
     -webkit-animation: slide-in-blurred-right 1.2s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
@@ -115,6 +122,7 @@ html {
 
 body {
     overflow-x: hidden;
+    overflow-y: scroll; 
 }
 
 p {
@@ -300,7 +308,7 @@ h1 {
 }
 
 #me {
-    color: rgb(136, 32, 32);
+    color: rgb(225, 243, 61);
 }
 
 #about img {
@@ -321,6 +329,9 @@ body {
 
 .section {
     width: 100%;
+}
+.section:last-of-type{
+    min-height: fit-content;
 }
 
 .one {
@@ -376,7 +387,7 @@ p {
 #projects h1,
 #contact h1 {
     text-align: center;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     margin-top: 0;
     padding-top: 10px;
 }
@@ -388,19 +399,21 @@ p {
     height: 750px;
     opacity: 0;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #project-div {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-x: none;
 }
 
 .project-grid {
     display: grid;
     text-align: center;
     padding: 10px;
-    border: 10px solid rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
     border-radius: 1vw;
     background-color: black;
     transition: ease-in 0.3s;
@@ -444,6 +457,7 @@ p {
     margin-bottom: 25px;
     text-decoration: none;
     border-bottom: solid 2px white;
+    font-family:'Times New Roman', Times, serif !important;
 }
 
 #video {
@@ -529,7 +543,7 @@ video {
 }
 
 .footer-img {
-    width: 60px;
+    width: 50px;
     margin-top: 10px;
     transition: ease-in-out 0.3s;
 }
@@ -579,6 +593,9 @@ span {
     }
 
     .footer-img {
-        width: 45px;
+        width: 40px;
+    }
+    .project-img{
+        min-width: 200px;
     }
 }
