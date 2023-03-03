@@ -1,15 +1,14 @@
-
 function addBodyClass() {
-    let body = document.querySelector("body");
-    body.classList.add("loaded");
-  }
-  
-  function addWelcome() {
-    let welcome = document.getElementById("welcome")
-    welcome.classList.add("text-blur-out");
-  }
-  setTimeout(addWelcome, 1800);
-  setTimeout(addBodyClass, 3000);
+  let body = document.querySelector("body");
+  body.classList.add("loaded");
+}
+
+function addWelcome() {
+  let welcome = document.getElementById("welcome");
+  welcome.classList.add("text-blur-out");
+}
+setTimeout(addWelcome, 1800);
+setTimeout(addBodyClass, 3000);
 
 function whenInViewport(elementId, className) {
   const element = document.querySelector(elementId);
@@ -17,22 +16,23 @@ function whenInViewport(elementId, className) {
   const boundsTop = scroll + window.innerHeight - 150;
   const bounds = element.getBoundingClientRect();
   const top = bounds.top + scroll;
-  
+
   if (top < boundsTop) {
     element.classList.add(className);
   }
 }
-window.addEventListener('scroll', function() {
-  whenInViewport('#about', 'slide-right');
-  whenInViewport('#projects', 'slide-right');
-  whenInViewport('#contact', 'slide-right');
+window.addEventListener("scroll", function () {
+  whenInViewport("#about", "slide-right");
+  whenInViewport("#projects", "slide-right");
+  whenInViewport("#contact", "slide-right");
 });
- 
+
 function handleScroll() {
   let navbar = document.getElementById("navbar");
   let sticky = navbar.offsetTop;
 
-  if (window.scrollY + window.innerHeight >= window.innerHeight * 2) navbar.classList.add("sticky");
+  if (window.scrollY + window.innerHeight >= window.innerHeight * 2)
+    navbar.classList.add("sticky");
   else navbar.classList.remove("sticky");
 }
 
@@ -42,10 +42,34 @@ const mediaQuery = window.matchMedia("(max-width: 500px)");
 function handleMediaQueryChange(mediaQuery) {
   const element = document.getElementById("navbar");
   if (mediaQuery.matches) element.style.display = "none";
-  else element.style.display = "flex"
-  
+  else element.style.display = "flex";
 }
 
 mediaQuery.addListener(handleMediaQueryChange);
 
 handleMediaQueryChange(mediaQuery);
+
+$.fn.isInViewport = function () {
+  var elementTop = $(this).offset().top;
+  var elementBottom = elementTop + $(this).outerHeight();
+
+  var viewportTop = $(window).scrollTop();
+  var viewportBottom = viewportTop + $(window).height();
+
+  return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
+$(window).on("resize scroll", function () {
+  if ($("#about").isInViewport()) {
+    $("#current").removeAttr("id");
+    $(".n-1").attr("id", "current");
+  }
+  if ($("#projects").isInViewport()) {
+    $("#current").removeAttr("id");
+    $(".n-2").attr("id", "current");
+  }
+  if ($("#contact").isInViewport()) {
+    $("#current").removeAttr("id");
+    $(".n-3").attr("id", "current");
+  }
+});
