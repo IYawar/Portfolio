@@ -369,7 +369,10 @@ p {
     text-decoration: none;
     background-color: none !important;
 }
-
+#current{
+    color: rgb(68, 163, 223);
+    border-color: rgb(68, 163, 223) !important;
+}
 #h1s {
 
     position: relative;
@@ -402,6 +405,10 @@ p {
     overflow-x: hidden;
 }
 
+#cap{
+    display: flex;
+    justify-content: space-evenly;
+}
 #project-div {
     display: flex;
     align-items: center;
@@ -420,12 +427,13 @@ p {
 }
 
 .project-grid:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .project-img {
-    width: 30vw;
+    max-width: 27vw;
     min-width: 250px;
+    border-radius: 0.5vw;
 }
 
 #main-title-1 {
@@ -444,12 +452,13 @@ p {
     top: 100vh;
     flex-direction: column;
     transition: ease-in;
-    left: 5px;
+    left: 15px;
 }
 
 .sticky {
     position: fixed !important;
     top: 0 !important;
+    left: 7px !important;
 }
 
 #navbar a {
@@ -577,6 +586,12 @@ span {
 
     #contact {
         height: 550px;
+    }
+    #cap{
+        flex-direction: column;
+    }
+    #project-div{
+        margin-bottom: 10px;
     }
 }
 
